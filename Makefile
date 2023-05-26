@@ -4,13 +4,15 @@ FILE_DIR = ../ratiocracy.github.io/book/download/
 XSL_DIR = xsl/
 LOG_FILE = make.log
 
-all: validate clean prepare latex pdfs html htmlonepage odt plaintext epub3 fb2
+all: validate clean autoformat prepare latex pdfs html htmlonepage odt plaintext epub3 fb2
 book: validate clean prepare latex pdfa5
+
+autoformat:
+	black scripts
 
 clean:
 	echo 'MAKE clean' | tee -a $(LOG_FILE)
 	git clean -d -f -X >> $(LOG_FILE) 2>&1
-	black scripts
 
 ecover:
 	convert cover/front_cover.ru.png ~/ecover.ru.jpg
@@ -117,10 +119,6 @@ links_check:
 	linkchecker --ignore-url=^mailto: -r2 https://ratiocracy.sbs/book/bi01.html
 
 deps:
-	wajig install texlive-full calibre html2text rubber linkchecker docbook5-xml docbook-xsl-ns xsltproc libxml2-utils xmlstarlet epubcheck default-jre
-	pip3 install --user -r scripts/requirements.txt
-	tlmgr init-usertree
-	tlmgr update --all
-	tlmgr install --reinstall xmpincl
+	wajig install texlive-full calibre html2text rubber linkchecker docbook5-xml docbook-xsl-ns xsltproc libxml2-utils xmlstarlet epubcheck default-jre black
 
 .SILENT:

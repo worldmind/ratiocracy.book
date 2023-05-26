@@ -175,6 +175,11 @@ def xlink(tag_name):
 
 
 def latex_post_process(text):
+    # For the future.
+    # Use xml entity instead of raw char for simplify transalation, but
+    # &nbsp; can't be used because of "XMLSyntaxError: Entity 'nbsp' not defined"
+    text = text.replace("&#160;", "~")
+
     text = text.replace("\u00A0", "~")
     text = re.sub(r"\(см.~(\\fullref{[^}]+})\)", r"\1", text)
     text = text.replace(r"%", r"\%")
