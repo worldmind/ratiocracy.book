@@ -67,7 +67,7 @@ def parse(parent):
         elif e.tag == db("epigraph"):
             result += convert_epigraph(e)
         elif e.tag == db("indexterm"):
-            result += "\index{%s}\n" % e.find(db("primary")).text
+            result += "\\index{%s}\n" % e.find(db("primary")).text
         elif e.tag == db("note"):
             result += "\\note{%s}{%s}\n" % (
                 e.find(db("title")).text,
@@ -153,7 +153,7 @@ def convert_paragraph(para):
             else:
                 result += r"\emphasis{%s}" % e.text
         elif e.tag == db("indexterm"):
-            result += "\index{%s}" % e.find(db("primary")).text
+            result += "\\index{%s}" % e.find(db("primary")).text
         else:
             AssertionError(f"Unknonw tag: {e.tag}")
         if e.tail:
@@ -184,7 +184,7 @@ def latex_post_process(text):
     text = re.sub(r"\(см.~(\\fullref{[^}]+})\)", r"\1", text)
     text = text.replace(r"%", r"\%")
     text = text.replace(r"&", r"\&")
-    text = re.sub("\s+\n", "\n", text)
+    text = re.sub(r"\s+" + "\n", "\n", text)
     text = re.sub(r"(.)\u0301", r"\\'{\1}", text, flags=re.DOTALL)
 
     return text
