@@ -4,7 +4,7 @@ FILE_DIR = ../ratiocracy.github.io/book/download/
 XSL_DIR = xsl/
 LOG_FILE = make.log
 
-all: validate clean autoformat prepare latex pdfs html htmlonepage odt plaintext epub3 fb2
+all: validate clean autoformat prepare latex pdfs html htmlonepage odt plaintext epub3
 book: validate clean prepare latex pdfa5
 
 autoformat:
@@ -79,12 +79,12 @@ p: pdf-for-printing
 validate:
 	xmlstarlet val --err --xsd /usr/share/xml/docbook/schema/xsd/5.0/docbook.xsd $(NAME).docbook
 
-fb2:
-	echo 'CREATE fb2' | tee -a $(LOG_FILE)
+#fb2:  # Need to update something for not download old saxon processor
+#	echo 'CREATE fb2' | tee -a $(LOG_FILE)
 # https://sourceforge.net/projects/saxon/
-	java -jar ~/.saxon/saxon9he.jar -o:$(FILE_DIR)/$(NAME).fb2 $(NAME).docbook $(XSL_DIR)/docbook2fb2.xsl
-	xmllint --format --noblanks $(FILE_DIR)/$(NAME).fb2 > $(NAME).fb2
-	mv $(NAME).fb2 $(FILE_DIR)/$(NAME).fb2
+#	java -jar ~/.saxon/saxon9he.jar -o:$(FILE_DIR)/$(NAME).fb2 $(NAME).docbook $(XSL_DIR)/docbook2fb2.xsl
+#	xmllint --format --noblanks $(FILE_DIR)/$(NAME).fb2 > $(NAME).fb2
+#	mv $(NAME).fb2 $(FILE_DIR)/$(NAME).fb2
 # FIXME not valid for now
 #	xmlstarlet val --err --xsd ../fb2/FictionBook.xsd $(FILE_DIR)/$(NAME).fb2
 
