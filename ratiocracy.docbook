@@ -6575,6 +6575,28 @@
           Управляется выборным директором.
           Кооперативная ветвь управляет госкорпорациями, лесами и землёй.
         </para>
+        <sect3 xml:id="funds">
+          <info>
+            <title>Общественные фонды</title>
+          </info>
+          <para>
+            <orderedlist>
+              <listitem><para><emphasis role="strong">Фонд поддержки детства.</emphasis>
+                  Образование и медицина для тех кто ещё не может зарабатывать сам по причине молодости, видимо до 20 лет.
+                  Меры поддержки численности населения.
+              </para></listitem>
+              <listitem><para><emphasis role="strong">Фонд создания вечных ценностей.</emphasis>
+                  Знания = наука, лекарства. Софт?
+              </para></listitem>
+              <listitem><para><emphasis role="strong">Фонд помощи безработным.</emphasis>
+                  Создание рабочих мест для выплаты пособий, кредиты на коммуналку.
+              </para></listitem>
+              <listitem><para><emphasis role="strong">Фонд медицинской помощи.</emphasis>
+                  Для тех у кого не осталось других возможностей получить медицинскую помощь?
+              </para></listitem>
+          </orderedlist>
+          </para>
+        </sect3>
       </sect2>
       <sect2 xml:id="scientific_branch">
         <info>
