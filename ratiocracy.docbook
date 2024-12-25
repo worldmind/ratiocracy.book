@@ -2176,6 +2176,12 @@
         </info>
         <indexterm><primary>Юриспруденция</primary></indexterm>
         <indexterm><primary>Этика</primary></indexterm>
+        <epigraph>
+          <attribution>Людвиг фон Мизес. Либерализм <citation>Mises_liberalismus</citation></attribution>
+          <para>
+            Второе соображение в пользу равенства всех людей перед законом — это поддержание социального мира. Уже указывалось на то, что следует избегать всякого нарушения мирного процесса разделения труда. Но почти невозможно сохранить продолжительный мир в обществе, где права и обязанности различаются в соответствии с классовой принадлежностью. Тот, кто отказывает части населения в правах, должен всегда быть готов к объединенному наступлению тех, кто лишен гражданских прав, на привилегированную часть общества. Классовые привилегии должны исчезнуть, и тогда прекратится конфликт по их поводу.
+          </para>
+          </epigraph>
         <para>
           Индивиды равны в <glossterm linkend="right_t">правах</glossterm> по общественному
           договору. Равны в тех
@@ -17565,6 +17571,13 @@
         <personname>Лем С.</personname>
       </author>
       <title>Сумма технологии</title>
+    </biblioentry>
+    <biblioentry>
+      <abbrev>Mises_liberalismus</abbrev>
+      <author>
+        <personname>Мизес. Л.</personname>
+      </author>
+      <title>Либерализм</title>
     </biblioentry>
     <biblioentry>
       <abbrev>Hayek</abbrev>
